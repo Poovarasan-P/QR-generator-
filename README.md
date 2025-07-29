@@ -13,11 +13,6 @@ A responsive and interactive web project built using **HTML**, **CSS**, and **Ja
 - **JavaScript (ES6)**
 ---
 ## 🚀 Live Demo
-[Click here to view the project](https://poovarasan-p.github.io/your-repo-name/) <!-- Replace with actual GitHub Pages link -->
----
-## 📷 Screenshots
-<!-- Add images like this if available -->
-<!-- ![Screenshot](./assets/screenshot.png) -->
----
-## 📁 Folder Structure
+<img width="946" height="991" alt="image" src="https://github.com/user-attachments/assets/9dc76549-205a-47e4-9c66-b3f3cae5c7d5" />
+
 
