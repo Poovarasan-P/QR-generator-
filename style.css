@@ -1,0 +1,206 @@
+/* Cyberpunk Neon Theme */
+:root {
+  --neon-aqua: #0ff0fc;
+  --neon-pink: #ff2a6d;
+  --dark-bg: #0a0a0a;
+  --darker-bg: #000000;
+  --box-border: 1px solid var(--neon-aqua);
+  --text-glow: 0 0 10px var(--neon-aqua), 0 0 20px var(--neon-aqua);
+  --box-glow: 0 0 15px var(--neon-aqua), 0 0 30px rgba(0, 255, 255, 0.3);
+}
+
+/* Base Styles */
+body {
+  background-color: var(--dark-bg);
+  color: var(--neon-aqua);
+  font-family: 'Courier New', monospace;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 20px;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 42, 109, 0.1) 0%, transparent 50%);
+}
+
+/* Main Container */
+.container {
+  background-color: var(--darker-bg);
+  border: var(--box-border);
+  border-radius: 8px;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: var(--box-glow);
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid var(--neon-aqua);
+  border-radius: 10px;
+  animation: borderPulse 4s linear infinite;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+@keyframes borderPulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 0.3; }
+}
+
+/* Typography */
+h1 {
+  color: var(--neon-aqua);
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2.2rem;
+  text-shadow: var(--text-glow);
+  letter-spacing: 2px;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+}
+
+/* Input Field */
+input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: var(--box-border);
+  border-radius: 4px;
+  color: var(--neon-aqua);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input::placeholder {
+  color: rgba(0, 255, 255, 0.5);
+}
+
+input:focus {
+  box-shadow: var(--box-glow);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.generate-btn {
+  background-color: transparent;
+  color: var(--neon-aqua);
+  border: var(--box-border);
+  margin-bottom: 15px;
+}
+
+.generate-btn:hover {
+  text-shadow: var(--text-glow);
+  box-shadow: var(--box-glow);
+  background-color: rgba(0, 255, 255, 0.1);
+}
+
+.download-btn {
+  background-color: var(--neon-pink);
+  color: black;
+  display: none;
+}
+
+.download-btn:hover {
+  box-shadow: 0 0 15px var(--neon-pink), 0 0 30px rgba(255, 42, 109, 0.5);
+}
+
+/* QR Code Container */
+.qr-container {
+  margin: 25px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: var(--box-border);
+  border-radius: 8px;
+  max-width: 250px;
+  animation: fadeIn 0.5s ease-out;
+  box-shadow: var(--box-glow);
+}
+
+/* Alert Messages */
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.alert.error {
+  background-color: rgba(255, 42, 109, 0.2);
+  border: 1px solid var(--neon-pink);
+  color: var(--neon-pink);
+}
+
+.alert.success {
+  background-color: rgba(0, 255, 255, 0.2);
+  border: 1px solid var(--neon-aqua);
+  color: var(--neon-aqua);
+}
+
+.alert.info {
+  background-color: rgba(255, 255, 0, 0.2);
+  border: 1px solid yellow;
+  color: yellow;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .btn {
+    padding: 12px;
+  }
+}
